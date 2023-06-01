@@ -1,0 +1,17 @@
+* {
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 1px;
+}
+
+#slider {
+    background-image: url('/assets/img/pexels-craig-adderley-1563356.jpg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 20px; /* Đặt độ cong cho viền */
+    height: 700px;
+}
+
+.my-10 {
+    margin-top: 10rem !important;
+    margin-bottom: 10rem !important;
+  }
