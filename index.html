@@ -15,19 +15,22 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
-  <div id="myheader" class="bg-white position-fixed top-0 start-0 end-0" style="z-index: 9999;">
+  <div id="myheader" class="bg-white position-fixed top-0 start-0 end-0 shadow shadow-sm shadow-lg" style="z-index: 9999;">
     <div class="container py-2">
       <div class="row">
-        <div class="col-lg-2 col-sm-12">
+        <div class="col-4 col-lg-2 mt-1 mt-md-2 mt-lg-0">
           <a href="#"><img src="./assets/img/logo.png" alt="Logo" class="img-fluid"></a>
         </div>
-        <div class="col-lg-5 d-sm-none d-lg-block mt-3">
+        <div class="col-5 col-md-3 col-lg-5 d-none d-md-block mt-3">
           <button type="button" class="btn btn-light border border-success text-success px-4">Trở thành đối tác</button>
         </div>
-        <div class="col-lg-5 d-sm-none d-lg-block mt-2">
+        <div class="col-6 d-md-none">
+          
+        </div>
+        <div class="col-sm-5 d-none d-md-block mt-2">
           <div class="row">
-            <div class="col-lg-3 py-3 text-center"><a href="#" class="text-decoration-none text-dark p-1">Về chúng tôi</a></div>
-            <div class="col-lg-3 py-2 text-center">
+            <div class="col-md-3 py-3 text-center"><a href="#" class="text-decoration-none text-dark p-1">Về chúng tôi</a></div>
+            <div class="col-md-3 py-2 text-center">
               <div class="dropdown">
                 <a class="btn border-0 dropdown-toggle p-2" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Hỗ trợ
@@ -38,9 +41,45 @@
                 </ul>
               </div>
             </div>
-            <div class="col-lg-3 py-3 text-center"><a href="#" class="text-decoration-none text-dark p-1">Khuyến mãi</a></div>
-            <div class="col-lg-3 py-2">
+            <div class="col-3 py-3 text-center"><a href="#" class="text-decoration-none text-dark p-1">Khuyến mãi</a></div>
+            <div class="col-3 py-2">
               <button type="button" class="btn bg-info-subtle border border-success text-success">Đăng nhập</button>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-2 d-flex d-md-none">
+          <button class="btn" type="button" data-bs-toggle="collapse" data-bs-target="#collapseMenu" aria-expanded="false" aria-controls="collapseExample">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
+        <div class="collapse" id="collapseMenu">
+          <div class="card card-body border-0">
+              <div class="row d-block d-md-none">
+                <div class="col-12 text-center mt-3">
+                  <button type="button" class="btn btn-light border border-success text-success px-4">Trở thành đối tác</button>
+                </div>
+                <div class="col-12 py-3 text-center"><a href="#" class="text-decoration-none text-dark p-1">Về chúng tôi</a></div>
+                <div class="col-12 py-2 text-center">
+                  <p class="m-0">
+                    <button class="btn" type="button" data-bs-toggle="collapse" data-bs-target="#collapseMenuMini" aria-expanded="false" aria-controls="collapseExample">
+                      Hỗ trợ <i class="fa-solid fa-caret-down"></i>
+                    </button>
+                  </p>
+                  <div class="collapse border border-1" id="collapseMenuMini">
+                    <a href="#" class="card card-body border-0 text-decoration-none">
+                      Hỗ trợ
+                    </a>
+                    <a href="#" class="card card-body border-0 text-decoration-none">
+                      Tra cứu đặt xe
+                    </a>
+                  </div>
+                </div>
+                <div class="col-12 py-3 text-center"><a href="#" class="text-decoration-none text-dark p-1">Khuyến mãi</a></div>
+                <div class="col-12 py-2 text-center">
+                  <button type="button" class="btn bg-info-subtle border border-success text-success">Đăng nhập</button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -50,11 +89,11 @@
   <div id="mycontent" style="margin-top: 82px;">
     <div id="slider" class="container mb-5">
         <div class="row">
-          <div class="col-lg-7">
+          <div class="col-lg-7 col-0">
 
           </div>
           <div class="col-lg-4 bg-body-tertiary pb-5 rounded-2 my-10">
-            <div class="row">
+            <div class="row bg-body">
               <span class="text-center fw-lighter mt-4 fs-7">Hơn 30000+ xe đang được cho thuê</span>
               <h3 class="text-center fw-bold py-3">Bạn cần thuê xe?</h3>
               <div class="col-lg-6">
@@ -67,7 +106,7 @@
                     </select>
                   </div>                    
               </div>
-              <div class="col-lg-6">
+              <div class="col-lg-6 mt-2 mt-lg-0">
                 <div class="input-group">
                   <select class="form-select" id="inputGroupSelect01">
                     <option disabled selected value="">Chọn địa điểm</option>
@@ -78,7 +117,7 @@
                 </div>                    
               </div>
             </div>
-            <div class="row bg-body py-3">
+            <div class="row bg-body py-lg-3">
               <div class="col-lg-6">
                 <span class="fw-lighter">Ngày nhận xe</span>
                 <fieldset>
@@ -105,129 +144,161 @@
     </div>
 
     <div id="car-introduction" class="py-5 bg-body-tertiary">
-      <h4 class="text-center fs-1 fw-bold">Xe Dành Cho Bạn</h4>
+      <h4 class="text-center fs-1 fw-bold mb-4">Xe Dành Cho Bạn</h4>
       <div class="container">
-        <div class="row">
-          <a href="#" class="col-lg-3 col-md-4 col-sm-6 border rounded-5 mt-3 bg-body text-decoration-none text-body">
-            <img class="img-fluid rounded-4 my-3" src="./assets/img/NAck_WBdKcVY88Th9rGAIQ.jpg" alt="">
-            <span class="fs-7 bg-primary-subtle p-1 rounded-5">Số tự động</span>
-            <h6 class="text-uppercase fw-bold mt-2">Honda civic 2022</h6>
-            <div class="fs-7"><i class="fa-solid fa-star text-warning"></i>5.0</div>
-            <hr class="my-2">
-            <div class="row my-2">
-              <div class="col-sm-9">
-                <div class="fs-7 pb-2 fw-bold text-body-tertiary"><i class="fa-solid fa-location-dot mx-1"></i>Quận Thủ Đức, Hồ Chí Minh</div>
+        <div class="row mt-3">
+          <div class="col-lg-3 col-md-4 col-sm-6 text-body p-1">
+            <a href="#" class="text-decoration-none text-body">
+              <div class="border rounded-5 text-decoration-none bg-body p-3 h-100">
+                <img class="img-fluid rounded-4 my-2" src="./assets/img/NAck_WBdKcVY88Th9rGAIQ.jpg" alt="">
+                <span class="fs-7 bg-primary-subtle p-1 rounded-5">Số tự động</span>
+                <h6 class="text-uppercase fw-bold mt-3">Honda civic 2022</h6>
+                <div class="fs-7"><i class="fa-solid fa-star text-warning"></i>5.0</div>
+                <hr class="my-3">
+                <div class="row my-2">
+                  <div class="col-sm-9">
+                    <div class="fs-7 pt-1 fw-bold text-body-tertiary"><i class="fa-solid fa-location-dot mx-1 text-body"></i>Quận Thủ Đức, Hồ Chí Minh</div>
+                  </div>
+                  <div class="col-sm-3 p-0">
+                    <div class="fs-6 fw-bold text-success ms-lg-3 ms-sm-0 ms-md-0">1160k</div>
+                  </div>
+                </div>
               </div>
-              <div class="col-sm-3">
-                <div class="fs-6 fw-bold text-success" style="margin: -4px;">1160k</div>
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-4 col-sm-6 text-body p-1">
+            <a href="#" class="text-decoration-none text-body">
+              <div class="border rounded-5 text-decoration-none bg-body p-3 h-100">
+                <img class="img-fluid rounded-4 my-2" src="./assets/img/NAck_WBdKcVY88Th9rGAIQ.jpg" alt="">
+                <span class="fs-7 bg-primary-subtle p-1 rounded-5">Số tự động</span>
+                <h6 class="text-uppercase fw-bold mt-3">Honda civic 2022</h6>
+                <div class="fs-7"><i class="fa-solid fa-star text-warning"></i>5.0</div>
+                <hr class="my-3">
+                <div class="row my-2">
+                  <div class="col-sm-9">
+                    <div class="fs-7 pt-1 fw-bold text-body-tertiary"><i class="fa-solid fa-location-dot mx-1 text-body"></i>Quận Thủ Đức, Hồ Chí Minh</div>
+                  </div>
+                  <div class="col-sm-3 p-0">
+                    <div class="fs-6 fw-bold text-success ms-lg-3 ms-sm-0 ms-md-0">1160k</div>
+                  </div>
+                </div>
               </div>
-            </div>
-          </a>
-          <a href="#" class="col-lg-3 col-md-4 col-sm-6 border rounded-5 mt-3 bg-body text-decoration-none text-body">
-            <img class="img-fluid rounded-4 my-3" src="./assets/img/NAck_WBdKcVY88Th9rGAIQ.jpg" alt="">
-            <span class="fs-7 bg-primary-subtle p-1 rounded-5">Số tự động</span>
-            <h6 class="text-uppercase fw-bold mt-2">Honda civic 2022</h6>
-            <div class="fs-7"><i class="fa-solid fa-star text-warning"></i>5.0</div>
-            <hr class="my-2">
-            <div class="row my-2">
-              <div class="col-sm-9">
-                <div class="fs-7 pb-2 fw-bold text-body-tertiary"><i class="fa-solid fa-location-dot mx-1"></i>Quận Thủ Đức, Hồ Chí Minh</div>
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-4 col-sm-6 text-body p-1">
+            <a href="#" class="text-decoration-none text-body">
+              <div class="border rounded-5 text-decoration-none bg-body p-3 h-100">
+                <img class="img-fluid rounded-4 my-2" src="./assets/img/NAck_WBdKcVY88Th9rGAIQ.jpg" alt="">
+                <span class="fs-7 bg-primary-subtle p-1 rounded-5">Số tự động</span>
+                <h6 class="text-uppercase fw-bold mt-3">Honda civic 2022</h6>
+                <div class="fs-7"><i class="fa-solid fa-star text-warning"></i>5.0</div>
+                <hr class="my-3">
+                <div class="row my-2">
+                  <div class="col-sm-9">
+                    <div class="fs-7 pt-1 fw-bold text-body-tertiary"><i class="fa-solid fa-location-dot mx-1 text-body"></i>Quận Thủ Đức, Hồ Chí Minh</div>
+                  </div>
+                  <div class="col-sm-3 p-0">
+                    <div class="fs-6 fw-bold text-success ms-lg-3 ms-sm-0 ms-md-0">1160k</div>
+                  </div>
+                </div>
               </div>
-              <div class="col-sm-3">
-                <div class="fs-6 fw-bold text-success" style="margin: -4px;">1160k</div>
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-4 col-sm-6 text-body p-1">
+            <a href="#" class="text-decoration-none text-body">
+              <div class="border rounded-5 text-decoration-none bg-body p-3 h-100">
+                <img class="img-fluid rounded-4 my-2" src="./assets/img/NAck_WBdKcVY88Th9rGAIQ.jpg" alt="">
+                <span class="fs-7 bg-primary-subtle p-1 rounded-5">Số tự động</span>
+                <h6 class="text-uppercase fw-bold mt-3">Honda civic 2022</h6>
+                <div class="fs-7"><i class="fa-solid fa-star text-warning"></i>5.0</div>
+                <hr class="my-3">
+                <div class="row my-2">
+                  <div class="col-sm-9">
+                    <div class="fs-7 pt-1 fw-bold text-body-tertiary"><i class="fa-solid fa-location-dot mx-1 text-body"></i>Quận Thủ Đức, Hồ Chí Minh</div>
+                  </div>
+                  <div class="col-sm-3 p-0">
+                    <div class="fs-6 fw-bold text-success ms-lg-3 ms-sm-0 ms-md-0">1160k</div>
+                  </div>
+                </div>
               </div>
-            </div>
-          </a>
-          <a href="#" class="col-lg-3 col-md-4 col-sm-6 border rounded-5 mt-3 bg-body text-decoration-none text-body">
-            <img class="img-fluid rounded-4 my-3" src="./assets/img/NAck_WBdKcVY88Th9rGAIQ.jpg" alt="">
-            <span class="fs-7 bg-primary-subtle p-1 rounded-5">Số tự động</span>
-            <h6 class="text-uppercase fw-bold mt-2">Honda civic 2022</h6>
-            <div class="fs-7"><i class="fa-solid fa-star text-warning"></i>5.0</div>
-            <hr class="my-2">
-            <div class="row my-2">
-              <div class="col-sm-9">
-                <div class="fs-7 pb-2 fw-bold text-body-tertiary"><i class="fa-solid fa-location-dot mx-1"></i>Quận Thủ Đức, Hồ Chí Minh</div>
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-4 col-sm-6 text-body p-1">
+            <a href="#" class="text-decoration-none text-body">
+              <div class="border rounded-5 text-decoration-none bg-body p-3 h-100">
+                <img class="img-fluid rounded-4 my-2" src="./assets/img/NAck_WBdKcVY88Th9rGAIQ.jpg" alt="">
+                <span class="fs-7 bg-primary-subtle p-1 rounded-5">Số tự động</span>
+                <h6 class="text-uppercase fw-bold mt-3">Honda civic 2022</h6>
+                <div class="fs-7"><i class="fa-solid fa-star text-warning"></i>5.0</div>
+                <hr class="my-3">
+                <div class="row my-2">
+                  <div class="col-sm-9">
+                    <div class="fs-7 pt-1 fw-bold text-body-tertiary"><i class="fa-solid fa-location-dot mx-1 text-body"></i>Quận Thủ Đức, Hồ Chí Minh</div>
+                  </div>
+                  <div class="col-sm-3 p-0">
+                    <div class="fs-6 fw-bold text-success ms-lg-3 ms-sm-0 ms-md-0">1160k</div>
+                  </div>
+                </div>
               </div>
-              <div class="col-sm-3">
-                <div class="fs-6 fw-bold text-success" style="margin: -4px;">1160k</div>
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-4 col-sm-6 text-body p-1">
+            <a href="#" class="text-decoration-none text-body">
+              <div class="border rounded-5 text-decoration-none bg-body p-3 h-100">
+                <img class="img-fluid rounded-4 my-2" src="./assets/img/NAck_WBdKcVY88Th9rGAIQ.jpg" alt="">
+                <span class="fs-7 bg-primary-subtle p-1 rounded-5">Số tự động</span>
+                <h6 class="text-uppercase fw-bold mt-3">Honda civic 2022</h6>
+                <div class="fs-7"><i class="fa-solid fa-star text-warning"></i>5.0</div>
+                <hr class="my-3">
+                <div class="row my-2">
+                  <div class="col-sm-9">
+                    <div class="fs-7 pt-1 fw-bold text-body-tertiary"><i class="fa-solid fa-location-dot mx-1 text-body"></i>Quận Thủ Đức, Hồ Chí Minh</div>
+                  </div>
+                  <div class="col-sm-3 p-0">
+                    <div class="fs-6 fw-bold text-success ms-lg-3 ms-sm-0 ms-md-0">1160k</div>
+                  </div>
+                </div>
               </div>
-            </div>
-          </a>
-          <a href="#" class="col-lg-3 col-md-4 col-sm-6 border rounded-5 mt-3 bg-body text-decoration-none text-body">
-            <img class="img-fluid rounded-4 my-3" src="./assets/img/NAck_WBdKcVY88Th9rGAIQ.jpg" alt="">
-            <span class="fs-7 bg-primary-subtle p-1 rounded-5">Số tự động</span>
-            <h6 class="text-uppercase fw-bold mt-2">Honda civic 2022</h6>
-            <div class="fs-7"><i class="fa-solid fa-star text-warning"></i>5.0</div>
-            <hr class="my-2">
-            <div class="row my-2">
-              <div class="col-sm-9">
-                <div class="fs-7 pb-2 fw-bold text-body-tertiary"><i class="fa-solid fa-location-dot mx-1"></i>Quận Thủ Đức, Hồ Chí Minh</div>
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-4 col-sm-6 text-body p-1">
+            <a href="#" class="text-decoration-none text-body">
+              <div class="border rounded-5 text-decoration-none bg-body p-3 h-100">
+                <img class="img-fluid rounded-4 my-2" src="./assets/img/NAck_WBdKcVY88Th9rGAIQ.jpg" alt="">
+                <span class="fs-7 bg-primary-subtle p-1 rounded-5">Số tự động</span>
+                <h6 class="text-uppercase fw-bold mt-3">Honda civic 2022</h6>
+                <div class="fs-7"><i class="fa-solid fa-star text-warning"></i>5.0</div>
+                <hr class="my-3">
+                <div class="row my-2">
+                  <div class="col-sm-9">
+                    <div class="fs-7 pt-1 fw-bold text-body-tertiary"><i class="fa-solid fa-location-dot mx-1 text-body"></i>Quận Thủ Đức, Hồ Chí Minh</div>
+                  </div>
+                  <div class="col-sm-3 p-0">
+                    <div class="fs-6 fw-bold text-success ms-lg-3 ms-sm-0 ms-md-0">1160k</div>
+                  </div>
+                </div>
               </div>
-              <div class="col-sm-3">
-                <div class="fs-6 fw-bold text-success" style="margin: -4px;">1160k</div>
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-4 col-sm-6 text-body p-1">
+            <a href="#" class="text-decoration-none text-body">
+              <div class="border rounded-5 text-decoration-none bg-body p-3 h-100">
+                <img class="img-fluid rounded-4 my-2" src="./assets/img/NAck_WBdKcVY88Th9rGAIQ.jpg" alt="">
+                <span class="fs-7 bg-primary-subtle p-1 rounded-5">Số tự động</span>
+                <h6 class="text-uppercase fw-bold mt-3">Honda civic 2022</h6>
+                <div class="fs-7"><i class="fa-solid fa-star text-warning"></i>5.0</div>
+                <hr class="my-3">
+                <div class="row my-2">
+                  <div class="col-sm-9">
+                    <div class="fs-7 pt-1 fw-bold text-body-tertiary"><i class="fa-solid fa-location-dot mx-1 text-body"></i>Quận Thủ Đức, Hồ Chí Minh</div>
+                  </div>
+                  <div class="col-sm-3 p-0">
+                    <div class="fs-6 fw-bold text-success ms-lg-3 ms-sm-0 ms-md-0">1160k</div>
+                  </div>
+                </div>
               </div>
-            </div>
-          </a>
-          <a href="#" class="col-lg-3 col-md-4 col-sm-6 border rounded-5 mt-3 bg-body text-decoration-none text-body">
-            <img class="img-fluid rounded-4 my-3" src="./assets/img/NAck_WBdKcVY88Th9rGAIQ.jpg" alt="">
-            <span class="fs-7 bg-primary-subtle p-1 rounded-5">Số tự động</span>
-            <h6 class="text-uppercase fw-bold mt-2">Honda civic 2022</h6>
-            <div class="fs-7"><i class="fa-solid fa-star text-warning"></i>5.0</div>
-            <hr class="my-2">
-            <div class="row my-2">
-              <div class="col-sm-9">
-                <div class="fs-7 pb-2 fw-bold text-body-tertiary"><i class="fa-solid fa-location-dot mx-1"></i>Quận Thủ Đức, Hồ Chí Minh</div>
-              </div>
-              <div class="col-sm-3">
-                <div class="fs-6 fw-bold text-success" style="margin: -4px;">1160k</div>
-              </div>
-            </div>
-          </a>
-          <a href="#" class="col-lg-3 col-md-4 col-sm-6 border rounded-5 mt-3 bg-body text-decoration-none text-body">
-            <img class="img-fluid rounded-4 my-3" src="./assets/img/NAck_WBdKcVY88Th9rGAIQ.jpg" alt="">
-            <span class="fs-7 bg-primary-subtle p-1 rounded-5">Số tự động</span>
-            <h6 class="text-uppercase fw-bold mt-2">Honda civic 2022</h6>
-            <div class="fs-7"><i class="fa-solid fa-star text-warning"></i>5.0</div>
-            <hr class="my-2">
-            <div class="row my-2">
-              <div class="col-sm-9">
-                <div class="fs-7 pb-2 fw-bold text-body-tertiary"><i class="fa-solid fa-location-dot mx-1"></i>Quận Thủ Đức, Hồ Chí Minh</div>
-              </div>
-              <div class="col-sm-3">
-                <div class="fs-6 fw-bold text-success" style="margin: -4px;">1160k</div>
-              </div>
-            </div>
-          </a>
-          <a href="#" class="col-lg-3 col-md-4 col-sm-6 border rounded-5 mt-3 bg-body text-decoration-none text-body">
-            <img class="img-fluid rounded-4 my-3" src="./assets/img/NAck_WBdKcVY88Th9rGAIQ.jpg" alt="">
-            <span class="fs-7 bg-primary-subtle p-1 rounded-5">Số tự động</span>
-            <h6 class="text-uppercase fw-bold mt-2">Honda civic 2022</h6>
-            <div class="fs-7"><i class="fa-solid fa-star text-warning"></i>5.0</div>
-            <hr class="my-2">
-            <div class="row my-2">
-              <div class="col-sm-9">
-                <div class="fs-7 pb-2 fw-bold text-body-tertiary"><i class="fa-solid fa-location-dot mx-1"></i>Quận Thủ Đức, Hồ Chí Minh</div>
-              </div>
-              <div class="col-sm-3">
-                <div class="fs-6 fw-bold text-success" style="margin: -4px;">1160k</div>
-              </div>
-            </div>
-          </a>
-          <a href="#" class="col-lg-3 col-md-4 col-sm-6 border rounded-5 mt-3 bg-body text-decoration-none text-body">
-            <img class="img-fluid rounded-4 my-3" src="./assets/img/NAck_WBdKcVY88Th9rGAIQ.jpg" alt="">
-            <span class="fs-7 bg-primary-subtle p-1 rounded-5">Số tự động</span>
-            <h6 class="text-uppercase fw-bold mt-2">Honda civic 2022</h6>
-            <div class="fs-7"><i class="fa-solid fa-star text-warning"></i>5.0</div>
-            <hr class="my-2">
-            <div class="row my-2">
-              <div class="col-sm-9">
-                <div class="fs-7 pb-2 fw-bold text-body-tertiary"><i class="fa-solid fa-location-dot mx-1"></i>Quận Thủ Đức, Hồ Chí Minh</div>
-              </div>
-              <div class="col-sm-3">
-                <div class="fs-6 fw-bold text-success" style="margin: -4px;">1160k</div>
-              </div>
-            </div>
-          </a>
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -237,13 +308,22 @@
         <div id="carouselExample" class="carousel slide">
           <div class="carousel-inner py-4">
             <div class="carousel-item active">
-              <img src="/assets/img/saigon.jpg" class="d-block w-100 rounded-5 img-fluid" alt="...">
+              <div class="position-relative">
+                <img src="/assets/img/saigon.jpg" class="d-block w-100 rounded-5 img-fluid" alt="saigon.jpg">
+                <h4 class="position-absolute translate-50 text-white top-50 start-50 fw-bold fs-1">Sài Gòn</h4>
+              </div>
+            </div>            
+            <div class="carousel-item">
+              <div class="position-relative">
+                <img src="/assets/img/hanoi.jpg" class="d-block w-100 rounded-5 img-fluid" alt="hanoi.jpg">
+                <h4 class="position-absolute translate-50 text-white top-50 start-50 fw-bold fs-1">Hà Nội</h4>
+              </div>
             </div>
             <div class="carousel-item">
-              <img src="/assets/img/hanoi.jpg" class="d-block w-100 rounded-5 img-fluid" alt="...">
-            </div>
-            <div class="carousel-item">
-              <img src="/assets/img/nhatrang.jpg" class="d-block w-100 rounded-5 img-fluid" alt="...">
+              <div class="position-relative">
+                <img src="/assets/img/nhatrang.jpg" class="d-block w-100 rounded-5 img-fluid" alt="nhatrang.jpg">
+                <h4 class="position-absolute translate-50 text-white top-50 start-50 fw-bold fs-1">Nha Trang</h4>
+              </div>
             </div>
           </div>
           <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
@@ -257,9 +337,78 @@
         </div>
       </div>
     </div>
+    <div id="blog-introduction" class="py-5 bg-body-tertiary">
+      <h4 class="text-center fs-1 fw-bold">KETNOIXE Blog</h4>
+      <div class="container">
+        <div class="row py-4">
+          <div class="col-lg-4">
+            <div class="position-relative py-2">
+              <img src="./assets/img/RaJDNmXOsnc0NfWqqCXZWA.jpg" class="d-block w-100 rounded-4 img-fluid " alt="">
+              <h4 class="position-absolute text-white fw-bold fs-5 text-uppercase px-3 w-100" style="bottom: 10%">Du lịch 3 miền cùng KETNOIXE <br><span class="fw-normal fs-6">29/03/2023</span></h4>
+            </div>
+            <div class="position-relative py-2">
+              <img src="./assets/img/RaJDNmXOsnc0NfWqqCXZWA.jpg" class="d-block w-100 rounded-4 img-fluid " alt="">
+              <h4 class="position-absolute text-white fw-bold fs-5 text-uppercase px-3 w-100" style="bottom: 10%">Du lịch 3 miền cùng KETNOIXE <br><span class="fw-normal fs-6">29/03/2023</span></h4>
+            </div>
+          </div>
+          <div class="col-lg-8">
+            <div class="position-relative py-2">
+              <img src="./assets/img/RaJDNmXOsnc0NfWqqCXZWA.jpg" class="d-block w-100 rounded-4 img-fluid " alt="">
+              <h4 class="position-absolute text-white fw-bold fs-5 text-uppercase px-3 w-100" style="bottom: 5%">Du lịch 3 miền cùng KETNOIXE <br><span class="fw-normal fs-6">29/03/2023</span></h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div id="myfooter"></div>
+  <div id="myfooter" class="pt-5 bg-secondary text-white">
+    <div class="container">
+      <div class="row mx-3 mx-sm-0">
+        <div class="col-lg-3 col-sm-6">
+          <h4 class="text-uppercase fw-bold fs-6 py-lg-2">Liên hệ</h4>
+            <a class="a-hover text-decoration-none text-white fs-7" href="mailto: leexdev@gmail.com"><i class="fa-solid fa-envelope me-2"></i>leex.dev@gmail.com</a><br>
+            <a class="a-hover text-decoration-none text-white fs-7" href="tel: 0337378867"><i class="fa-solid fa-phone me-2"></i>0337378867</a>
+            <div class="py-3">
+              <a class="a-hover text-decoration-none text-success bg-white rounded-5 fs-3" href="#"><i class="fa-brands fa-facebook mx-2"></i></a>
+              <a class="a-hover text-decoration-none text-success bg-white rounded-5 fs-3" href="#"><i class="fa-brands fa-linkedin mx-2"></i></a>
+              <a class="a-hover text-decoration-none text-success bg-white rounded-5 fs-3" href="#"><i class="fa-brands fa-instagram mx-2"></i></a>
+            </div>
+        </div>
+        <div class="col-lg-3 col-sm-6">
+          <h4 class="text-uppercase fw-bold fs-6 pt-3 pt-sm-0 py-lg-2">Giới thiệu</h4>
+          <a class="a-hover text-decoration-none text-white fs-7">Về chúng tôi</a><br>
+        </div>
+        <div class="col-lg-3 col-sm-6">
+          <h4 class="text-uppercase fw-bold fs-6 pt-4 pt-sm-4 pt-md-0 py-lg-2">Chính sách</h4>
+          <a class="a-hover text-decoration-none text-white fs-7">Chính sách bảo mật thông tin</a><br>
+          <a class="a-hover text-decoration-none text-white fs-7">Quy chế hoạt động</a><br>
+          <a class="a-hover text-decoration-none text-white fs-7">Quy trình giải quyết khiếu nại</a><br>
+        </div>
+        <div class="col-lg-3 col-sm-6">
+          <h4 class="text-uppercase fw-bold fs-6 pt-4 pt-sm-4 pt-md-0 py-lg-2">Hỗ trợ</h4>
+          <a class="a-hover text-decoration-none text-white fs-7">Hướng dẫn thuê xe</a><br>
+          <a class="a-hover text-decoration-none text-white fs-7">Câu hỏi thường gặp</a><br>
+          <a class="a-hover text-decoration-none text-white fs-7">Ketnoixe blog</a><br>
+        </div>
+      </div>
+      <div class="col-sm-12 pt-4 pt-sm-5 pb-2">
+        <p class="text-center">Bản quyền © 2023 thuộc về Ketnoixe.</p>
+      </div>
+    </div>
+  </div>
+  <div class="toast d-block position-fixed z-3 start-0 bottom-0" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="toast-header">
+      <i class="fa-solid fa-bell me-2 text-danger"></i>
+      <strong class="me-auto">Thông báo</strong>
+      <small>11 mins ago</small>
+      <button type="button" id="close-toast" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+    <div class="toast-body">
+      Bạn có 1 tin nhắn mới
+    </div>
+  </div>
 
+  <script src="assets/js/bootstrap.min.js"></script>
   <script src="assets/js/bootstrap.bundle.min.js"></script>
   <script src="assets/js/custom.js"></script>
 </body>

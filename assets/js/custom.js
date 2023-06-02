@@ -29,3 +29,25 @@ window.addEventListener('load', function() {
     });
   });
   
+
+// Lấy danh sách tất cả các nút có class "btn-close"
+var closeButtonList = document.querySelectorAll('#close-toast');
+
+// Lặp qua danh sách các nút và thêm sự kiện click cho mỗi nút
+closeButtonList.forEach(function(closeButton) {
+  closeButton.addEventListener('click', function() {
+    // Tìm phần tử cha gần nhất có class "toast"
+    var toastElement = this.closest('.toast');
+
+    // Kiểm tra xem phần tử cha đã được tìm thấy hay chưa
+    if (toastElement) {
+      // Đóng toast bằng cách thêm class "hide" vào phần tử cha
+      toastElement.classList.add('hide');
+
+      // Sau một khoảng thời gian nhất định (ví dụ: 500ms), xóa phần tử toast khỏi DOM
+      setTimeout(function() {
+        toastElement.remove();
+      }, 300);
+    }
+  });
+});
