@@ -1,50 +1,64 @@
-// JavaScript
-var today = new Date();
+var currentDate = new Date();
+var currentDateStart = new Date();
+var currentDateEnd = new Date();
+currentDateStart.setUTCHours(7, 0);
+currentDateEnd.setUTCHours(19, 0);
 
-// Lấy ngày hôm sau
-var tomorrow = new Date(today);
-tomorrow.setDate(today.getDate() + 1);
+var currentDateTime = currentDate.toISOString().slice(0, 16);
+var currentDateTimeStart = currentDateStart.toISOString().slice(0, 16);
+var currentDateTimeEnd = currentDateEnd.toISOString().slice(0, 16);
 
-// Đặt giá trị mặc định là ngày hôm sau và 7 giờ sáng
-var defaultDateTimeStart = tomorrow.toISOString().slice(0, 10) + 'T07:00';
-var defaultDateTimeEnd = tomorrow.toISOString().slice(0, 10) + 'T19:00';
+document.getElementById("dateTimePickerStart").value = currentDateTimeStart;
+document.getElementById("dateTimePickerEnd").value = currentDateTimeEnd;
+document.getElementById("dateTimePickerStart").min = currentDateTime;
+document.getElementById("dateTimePickerEnd").min = currentDateTime;
 
-document.getElementById('dateTimePickerStart').value = defaultDateTimeStart;
-document.getElementById('dateTimePickerEnd').value = defaultDateTimeEnd;
+function updateEndDate() {
+  var startDate = document.getElementById("dateTimePickerStart").value;
+  var endDateInput = document.getElementById("dateTimePickerEnd");
+  var startDateTime = new Date(startDate);
+  var endDateTime = new Date(endDateInput.value);
 
+  endDateInput.min = startDateTime.toISOString().split(".")[0];
+
+  if (endDateTime.getHours() < startDateTime.getHours() || startDateTime.getDate() > endDateTime.getDate()) {
+    endDateTime.setDate(endDateTime.getDate() + 1);
+  }
+
+  var formattedEndDate = endDateTime.getFullYear() + "-" + padZero(endDateTime.getMonth() + 1) + "-" + padZero(endDateTime.getDate()) + "T" + padZero(endDateTime.getHours()) + ":" + padZero(endDateTime.getMinutes());
+  endDateInput.value = formattedEndDate;
+}
+
+function padZero(value) {
+  return value.toString().padStart(2, '0');
+}
 
 window.addEventListener('load', function() {
-    var slider = document.getElementById('slider');
-    var images = ['/assets/img/pexels-craig-adderley-1563356.jpg', '/assets/img/pexels-nout-gons-248159.jpg', '/assets/img/pexels-tiana-614484.jpg'];
-  
-    function changeBackground() {
-      var randomIndex = Math.floor(Math.random() * images.length);
-      var randomImage = images[randomIndex];
-      slider.style.backgroundImage = 'url("' + randomImage + '")';
-    }
-  
-    changeBackground();
-    window.addEventListener('beforeunload', function() {
-      changeBackground();
-    });
-  });
-  
+  var slider = document.getElementById('slider');
+  var images = ['/assets/img/pexels-craig-adderley-1563356.jpg', '/assets/img/pexels-nout-gons-248159.jpg', '/assets/img/pexels-tiana-614484.jpg'];
 
-// Lấy danh sách tất cả các nút có class "btn-close"
+  function changeBackground() {
+    var randomIndex = Math.floor(Math.random() * images.length);
+    var randomImage = images[randomIndex];
+    slider.style.backgroundImage = 'url("' + randomImage + '")';
+  }
+
+  changeBackground();
+
+  window.addEventListener('beforeunload', function() {
+    changeBackground();
+  });
+});
+
 var closeButtonList = document.querySelectorAll('#close-toast');
 
-// Lặp qua danh sách các nút và thêm sự kiện click cho mỗi nút
 closeButtonList.forEach(function(closeButton) {
   closeButton.addEventListener('click', function() {
-    // Tìm phần tử cha gần nhất có class "toast"
     var toastElement = this.closest('.toast');
 
-    // Kiểm tra xem phần tử cha đã được tìm thấy hay chưa
     if (toastElement) {
-      // Đóng toast bằng cách thêm class "hide" vào phần tử cha
       toastElement.classList.add('hide');
 
-      // Sau một khoảng thời gian nhất định (ví dụ: 500ms), xóa phần tử toast khỏi DOM
       setTimeout(function() {
         toastElement.remove();
       }, 300);
