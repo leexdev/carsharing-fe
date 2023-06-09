@@ -24,3 +24,11 @@
     text-decoration: underline !important;
     cursor: pointer;
 }
+
+#input-search::placeholder {
+    color: var(--bs-tertiary-color);
+}
+
+.form-select:focus {
+    box-shadow: none;
+}

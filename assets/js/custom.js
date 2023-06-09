@@ -65,3 +65,15 @@ closeButtonList.forEach(function(closeButton) {
     }
   });
 });
+document.addEventListener("click", function(event) {
+  var collapseMenu = document.getElementById("collapseMenu");
+  var targetElement = event.target; // Phần tử được nhấp chuột
+
+  // Kiểm tra xem phần tử được nhấp chuột có nằm trong collapseMenu hay không
+  var isClickInside = collapseMenu.contains(targetElement);
+
+  // Nếu phần tử được nhấp chuột không nằm trong collapseMenu hoặc là nút đăng nhập, đóng collapseMenu
+  if (!isClickInside || targetElement.matches("#loginBtn")) {
+    collapseMenu.classList.remove("show");
+  }
+});
