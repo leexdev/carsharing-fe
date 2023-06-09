@@ -4,7 +4,7 @@
 }
 
 #slider {
-    background-image: url('/assets/img/pexels-craig-adderley-1563356.jpg');
+    background-image: url('./assets/img/pexels-craig-adderley-1563356.jpg');
     background-size: cover;
     background-position: center;
     border-radius: 20px;
