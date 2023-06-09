@@ -35,7 +35,7 @@ function padZero(value) {
 
 window.addEventListener('load', function() {
   var slider = document.getElementById('slider');
-  var images = ['/assets/img/pexels-craig-adderley-1563356.jpg', '/assets/img/pexels-nout-gons-248159.jpg', '/assets/img/pexels-tiana-614484.jpg'];
+  var images = ['./assets/img/pexels-craig-adderley-1563356.jpg', './assets/img/pexels-nout-gons-248159.jpg', './assets/img/pexels-tiana-614484.jpg'];
 
   function changeBackground() {
     var randomIndex = Math.floor(Math.random() * images.length);
