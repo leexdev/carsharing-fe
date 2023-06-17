@@ -1,27 +1,6 @@
 var currentDate = new Date();
 var currentDateTime = currentDate.toISOString().slice(0, 16);
 
-// Kiểm tra xem trang hiện tại có phải là trang "index.html" hay không
-if (window.location.pathname === "/index.html") {
-  var currentDateStart = new Date();
-  var currentDateEnd = new Date();
-  currentDateStart.setUTCHours(7, 0);
-  currentDateEnd.setUTCHours(19, 0);
-
-  var currentDateTimeStart = currentDateStart.toISOString().slice(0, 16);
-  var currentDateTimeEnd = currentDateEnd.toISOString().slice(0, 16);
-
-  // Thiết lập giá trị mặc định cho ngày nhận và ngày trả xe trên trang "index.html"
-  document.getElementById("dateTimePickerStart").value = currentDateTimeStart;
-  document.getElementById("dateTimePickerEnd").value = currentDateTimeEnd;
-  localStorage.setItem("startDateStorage", currentDateTimeStart);
-  localStorage.setItem("endDateStorage", currentDateTimeEnd);
-}
-else {
-  // Lấy giá trị đã lưu trong localStorage cho ngày nhận và ngày trả xe
-  document.getElementById("dateTimePickerStart").value = localStorage.getItem("startDateStorage");
-  document.getElementById("dateTimePickerEnd").value = localStorage.getItem("endDateStorage");
-}
 
 // Thiết lập giá trị tối thiểu cho ngày nhận và ngày trả xe là thời điểm hiện tại
 document.getElementById("dateTimePickerStart").min = currentDateTime;
@@ -37,7 +16,7 @@ function updateEndDate() {
   endDateInput.min = startDateTime.toISOString().split(".")[0];
 
   // Kiểm tra và điều chỉnh ngày trả xe nếu cần thiết
-  if (endDateTime.getDate() == startDateTime.getDate() && endDateTime.getHours() < startDateTime.getHours()) {
+  if (endDateTime.getDate() == startDateTime.getDate() && endDateTime.getMonth() == startDateTime.getMonth() && endDateTime.getHours() < startDateTime.getHours()) {
     endDateTime.setDate(startDateTime.getDate() + 1);
   } else if ((startDateTime.getDate() > endDateTime.getDate() && startDateTime.getMonth() == endDateTime.getMonth() && startDateTime.getHours() < endDateTime.getHours()) || (startDateTime.getMonth() > endDateTime.getMonth())) {
     endDateTime.setDate(startDateTime.getDate());
@@ -59,36 +38,16 @@ function updateEndDate() {
   localStorage.setItem("totalDays", totalDays);
 
   document.getElementById("totalDays").textContent = "x" + localStorage.getItem("totalDays") + " ngày";
+  var totalPrice = unitPrice * totalDays;
+  var formattedTotalPrice = totalPrice.toLocaleString();
+  localStorage.setItem("totalPrice", formattedTotalPrice);
+  document.getElementById("totalPrice").textContent = formattedTotalPrice + " đ";
 }
 
 // Hàm thêm số 0 đằng trước các giá trị tháng và ngày nếu cần
 function padZero(value) {
   return value.toString().padStart(2, '0');
 }
-
-// Sự kiện onload cho trang "index.html"
-window.addEventListener('load', function() {
-  var desiredPage = '/index.html';
-  if (window.location.pathname === desiredPage) {
-    var slider = document.getElementById('slider');
-    var images = ['./assets/img/pexels-craig-adderley-1563356.jpg', './assets/img/pexels-nout-gons-248159.jpg', './assets/img/pexels-tiana-614484.jpg'];
-
-    // Hàm thay đổi background slider
-    function changeBackground() {
-      var randomIndex = Math.floor(Math.random() * images.length);
-      var randomImage = images[randomIndex];
-      slider.style.backgroundImage = 'url("' + randomImage + '")';
-    }
-
-    // Thay đổi background ban đầu
-    changeBackground();
-
-    // Sự kiện beforeunload khi rời khỏi trang
-    window.addEventListener('beforeunload', function() {
-      changeBackground();
-    });
-  }
-});
 
 // Xử lý sự kiện khi nhấn nút đóng của toast
 var closeButtonList = document.querySelectorAll('#close-toast');
