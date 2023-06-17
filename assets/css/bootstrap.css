@@ -11383,6 +11383,9 @@ textarea.form-control-lg {
   .pt-xl-5 {
     padding-top: 3rem !important;
   }
+  .pt-xl-6 {
+    padding-top: 250px !important;
+  }
   .pe-xl-0 {
     padding-right: 0 !important;
   }

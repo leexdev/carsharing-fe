@@ -32,3 +32,10 @@
 .form-select:focus {
     box-shadow: none;
 }
+
+.img-vehicle {
+    display: block;
+    flex: 0 0 auto;
+    margin: auto 0;
+    width: 210px;
+}
